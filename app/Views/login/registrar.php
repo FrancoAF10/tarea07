@@ -7,10 +7,11 @@
 </head>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <body>
     <h3 class="text-center mt-3">Registro</h3>
 
-    <form action="/login/crear/usuario" method="post" enctype="multipart/form-data">
+    <form action="/login/crear/usuario" method="post" enctype="multipart/form-data" id="registrar">
         <div class="container">
             <div class="card">
                 <div class="card-body">
@@ -68,3 +69,27 @@
     </form>
 </body>
 </html>
+<script>
+document.addEventListener("DOMContentLoaded",()=>{
+    const form = document.querySelector("#registrar");
+
+     form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        Swal.fire({
+          title: '¿Registrar?',
+          text: 'Confirme si desea registrar un Nuevo Usuario',
+          icon: 'question',
+          showCancelButton: true,
+          confirmButtonColor: '#0d6efd',
+          cancelButtonColor: '#6c757d',
+          confirmButtonText: 'Registrar',
+          cancelButtonText: 'Cancelar'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            form.submit();
+          }
+        });//método fire
+      });//evento submit
+})
+</script>
