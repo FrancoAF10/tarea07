@@ -9,7 +9,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 <body>
     <div class="d-flex justify-content-end">
-        <img src="<?=base_url($usuario['avatar'])?>" alt="Avatar" class="rounded-circle img-fluid" width="70" height="70">
+        <img src="<?=base_url($usuario['avatar'])?>" alt="Avatar" class="rounded-circle img-fluid" width="80" height="80">
     </div>
     <h1 class="text-center">Bienvenido <?=$usuario['nivelacceso']?> <?=$usuario['nombres']?></h1>
     <div class="text-center mt-5">

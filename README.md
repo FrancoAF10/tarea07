@@ -40,4 +40,4 @@ database.default.port =
     - user: afgian
     - password: franco123@
 
-    nota: se amplió el tamaño de la imagen del avatar de 1024(1MB) a 5MB para evitar inconvenientes al registrar el usuario.
+    nota: se amplió el tamaño de la imagen del avatar de 1024(1MB) a 2048(2MB) para evitar inconvenientes al registrar el usuario.

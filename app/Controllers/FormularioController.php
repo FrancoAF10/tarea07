@@ -30,7 +30,7 @@ class FormularioController extends BaseController
         'avatar'  => [
             'uploaded[avatar]',
             'mime_in[avatar,image/jpg,image/jpeg,image/png]',
-            'max_size[avatar,5120]'
+            'max_size[avatar,2048]'
         ]
         ]);
 
@@ -40,6 +40,7 @@ class FormularioController extends BaseController
 
             return redirect()->back()->withInput();
         }
+
         $nombres = $this->request->getVar('nombres'); 
         $apellidos = $this->request->getVar('apellidos'); 
         $nomusuario = $this->request->getVar('nomusuario'); 

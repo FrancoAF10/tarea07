@@ -11,20 +11,20 @@
 <body>
     <h3 class="text-center mt-3">Registro</h3>
 
-    <form action="/login/crear/usuario" method="post" enctype="multipart/form-data" id="registrar">
+    <form action="/login/crear/usuario" method="post" enctype="multipart/form-data" id="registrar" autocomplete="off">
         <div class="container">
             <div class="card">
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="text" name="nombres" id="nombres" class="form-control">
+                                <input type="text" name="nombres" id="nombres" class="form-control" required>
                                 <label for="nombres">Ingrese Nombres</label>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="text" name="apellidos" id="apellidos" class="form-control">
+                                <input type="text" name="apellidos" id="apellidos" class="form-control" required>
                                 <label for="apellidos">Ingrese Apellidos</label>
                             </div>
                         </div>
@@ -32,13 +32,13 @@
                     <div class="row mt-3">
                         <div class="col-md-4">
                             <div class="form-floating">
-                                <input type="text" name="nomusuario" id="nomusuario" class="form-control">
+                                <input type="text" name="nomusuario" id="nomusuario" class="form-control" required>
                                 <label for="nomusuario">Ingrese Nombre de Usuario</label>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-floating">
-                                <select name="nivelacceso" id="nivelacceso" class="form-select">
+                                <select name="nivelacceso" id="nivelacceso" class="form-select" required>
                                     <option value="ADMIN">ADMIN</option>
                                     <option value="USER">USER</option>
                                 </select>
@@ -47,7 +47,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-floating">
-                                <input type="text" name="claveacceso" id="claveacceso" class="form-control">
+                                <input type="password" name="claveacceso" id="claveacceso" class="form-control" required>
                                 <label for="claveacceso">Ingrese Contraseña</label>
                             </div>
                         </div>
@@ -75,6 +75,33 @@ document.addEventListener("DOMContentLoaded",()=>{
 
      form.addEventListener("submit", function (event) {
         event.preventDefault();
+
+        const nombres = document.querySelector("#nombres").value.trim();
+        const apellidos = document.querySelector("#apellidos").value.trim();
+        const nomusuario = document.querySelector("#nomusuario").value.trim();
+        const claveacceso = document.querySelector("#claveacceso").value.trim();
+        const avatar = document.querySelector("#avatar").files[0];
+
+        if (!nombres || !apellidos || !nomusuario || !claveacceso) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Por favor complete todos los campos antes de registrar.'
+            });
+            //retornamos en caso de que falte algun dato, con ayuda de trim() eliminara espacios en blanco
+            return; 
+        }
+
+        const Imagen=2*1024*1024;
+
+        if(avatar.size>Imagen){
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Imagen excedio el limite. El tamaño máximo permitido es 2MB.'
+            });
+            return;
+        }
 
         Swal.fire({
           title: '¿Registrar?',
