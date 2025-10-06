@@ -7,4 +7,6 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 $routes->post('/login','UsuarioController::login');
-$routes->get('/login/registrar', 'FormularioController::index');
+$routes->get('/login/inicio', 'FormularioController::index');
+$routes->get('/login/registrar', 'FormularioController::formulario');
+$routes->post('/login/crear/usuario', 'FormularioController::registrar');

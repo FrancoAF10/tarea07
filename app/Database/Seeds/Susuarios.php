@@ -13,9 +13,9 @@ class Susuarios extends Seeder
                 "apellidos"=> "Anton Felix",
                 "nombres"=> "Gian Franco",
                 "nomusuario"=> "afgian",
-                "claveacceso"=> password_hash("admin789*", PASSWORD_DEFAULT),
+                "claveacceso"=> password_hash("franco123@", PASSWORD_DEFAULT),
                 "nivelacceso"=> "ADMIN",
-                "avatar"=>null,
+                "avatar"=>"images/users/user.jpg",
                 "create_at"=> date("Y-m-d H:i:s"),
                 "update_at"=> null
             ]

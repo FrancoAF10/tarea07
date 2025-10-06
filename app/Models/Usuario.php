@@ -8,6 +8,7 @@ protected $table = "usuario";
 
 protected $createdField='create_at';
 protected $updatedField='update_at';
+protected $allowedFields = ['nombres', 'apellidos', 'nomusuario', 'claveacceso', 'nivelacceso', 'avatar'];
 
 /**
  * retorna el registro del nombre del usuario indicado

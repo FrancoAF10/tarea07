@@ -27,7 +27,16 @@ class UsuarioController extends BaseController
             $session->setFlashdata("error_password","clave incorrecta") ;
             return redirect()->to(base_url());
         }
+         $session->set([
+            'id'  => $data['id'],
+            'nombres'    => $data['nombres'],
+            'apellidos'  => $data['apellidos'],
+            'nomusuario' => $data['nomusuario'],
+            'nivelacceso'=> $data['nivelacceso'],
+            'avatar'     => $data['avatar'], 
+            'isLoggedIn' => true
+        ]);
 
-        return redirect()->to(base_url('/login/registrar'));
+        return redirect()->to(base_url('/login/inicio'));
     }
 }
