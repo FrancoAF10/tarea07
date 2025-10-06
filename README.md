@@ -37,7 +37,7 @@ database.default.port =
  - 'http://tarea07.test/' ejercicio.
 
 5. Datos del usuario al migrar la database del proyecto:
-    user: afgian
-    password: franco123@
+    - user: afgian
+    - password: franco123@
 
     nota: se amplió el tamaño de la imagen del avatar de 1024(1MB) a 5MB para evitar inconvenientes al registrar el usuario.
