@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 
         const Imagen=2*1024*1024;
 
-        if(avatar.size>Imagen){
+        if(avatar && avatar.size>Imagen){
             Swal.fire({
                 icon: 'error',
                 title: 'Error',
